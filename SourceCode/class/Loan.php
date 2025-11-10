@@ -18,13 +18,20 @@ class Loan {
 
     public function borrowBook($book_id, $member_id) {
         $stmt = $this->db->prepare("INSERT INTO loans (book_id, member_id, loan_date) VALUES (?, ?, CURDATE())");
+        $stmtBook = $this->db->prepare("SELECT stock FROM books WHERE id = ?");
+        $stmt->execute([$book_id]);
+
         $book = new Book();
-        $bookData = $this->db->query("SELECT stock FROM books WHERE id = $book_id")->fetch();
-        if ($bookData['stock'] > 0) {
+        $bookData = $stmt->fetch(); // $this->db->query("SELECT stock FROM books WHERE id = $book_id")->fetch();
+        if (isset($bookData) && $bookData['stock'] > 0) {
             $book->updateStock($book_id, $bookData['stock'] - 1);
             return $stmt->execute([$book_id, $member_id]);
         }
         return false;
+    }
+
+    public function extendBookLoanDate($loan_id, $member_id, $length) {
+
     }
 
     public function returnBook($loan_id) {

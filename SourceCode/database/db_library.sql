@@ -34,6 +34,7 @@ CREATE TABLE loans (
 );
 
 INSERT INTO genres (name) VALUES
+('Lainnya'),
 ('Fiksi'),
 ('Non-fiksi'),
 ('Sejarah'),
@@ -48,10 +49,10 @@ INSERT INTO genres (name) VALUES
 ('Antropologi');
 
 INSERT INTO books (title, author, isbn, genre_id, stock) VALUES
-('Sebuah Seni untuk Bersikap Bodo Amat', 'Mark Manson', '9786020633071', 6, 5),
-('Atomic Habits', 'James Clear', '9780735211292', 6, 3),
-('The Power of Habit', 'Charles Duhigg', '9780812981605', 5, 4),
-('7 Habits of Highly Effective People', 'Stephen R. Covey', '9780743269513', 6, 2);
+('Sebuah Seni untuk Bersikap Bodo Amat', 'Mark Manson', '9786020633071', 7, 5),
+('Atomic Habits', 'James Clear', '9780735211292', 7, 3),
+('The Power of Habit', 'Charles Duhigg', '9780812981605', 6, 4),
+('7 Habits of Highly Effective People', 'Stephen R. Covey', '9780743269513', 7, 2);
 
 INSERT INTO members (name, email, phone) VALUES
 ('Putra Donatur Kampus', 'putradonatur@umail.com', '08123456789'),
