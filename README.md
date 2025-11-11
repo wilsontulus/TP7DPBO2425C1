@@ -16,16 +16,20 @@ Aamiin.
 
 ### Deskripsi desain basis data:
 
-- Suatu member bisa memiliki lebih dari 1 pinjaman buku, yang merupakan suatu sesi pinjaman.
-- Suatu sesi pinjaman hanya dapat terhubung ke satu buku dan satu member.
-- Suatu genre bisa digunakan oleh lebih dari 1 buku.
-- Suatu buku hanya bisa memiliki 1 genre saja.
+- Tabel `members` menampung data para member perpustakaan yang berupa ID member, nama, email, dan nomor telepon. Tiap member bisa memiliki lebih dari 1 pinjaman buku.
+- Tabel `loans` menampung data pinjaman buku yang terkait dengan masing-masing satu member dan satu buku, yang memiliki data berupa ID pinjaman, ID buku, ID member, tanggal pinjaman, dan tanggal pengembalian. Tiap sesi pinjaman hanya dapat terhubung kepada satu buku dan satu member.
+- Tabel `books` menampung data buku yang tersedia dalam perpustakaan, yang memiliki data berupa ID buku, judul, penulis, ISBN, ID genre, dan jumlah stok buku. Tiap buku hanya dapat memiliki satu genre.
+- Tabel `genres` menampung data genre yang dikenal, terdiri dari ID genre dan nama genre masing-masing. Tiap genre dapat digunakan oleh lebih dari 1 buku.
 
 ## Alur jalan program
 
-Program ini menyediakan antarmuka berupa webpage yang bisa dibuka oleh user (misal: admin perpustakaan) untuk mengelola stok buku perpustakaan, member perpustakaan, dan peminjaman buku.
+Program ini menyediakan antarmuka berupa webpage yang bisa dibuka oleh user (misal: admin perpustakaan) untuk mengelola stok buku perpustakaan, member perpustakaan, dan pinjaman buku.
+
+Program ini memiliki fungsi CRUD untuk buku, member, dan pinjaman buku, sehingga pengelola perpustakaan dapat mengelola data-data tersebut dengan fleksibel. Pengelola dapat melakukan penambahan, perubahan, maupun penghapusan data buku serta data member. 
+
+Untuk data pinjaman, pengguna dapat mengajukan pinjaman buku, serta melakukan pengembalian buku. Data akan selalu dicatat dan tidak dapat dihapus dari antarmuka webpage.
 
 ## Preview operasional program
 
-https://github.com/user-attachments/assets/db39e633-f164-4cd2-b78b-b24795862e20
+![Preview](Dokumentasi/preview.mp4)
 
