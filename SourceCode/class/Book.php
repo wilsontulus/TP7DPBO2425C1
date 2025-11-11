@@ -10,6 +10,11 @@ class Book {
 
     // Getter functions
 
+    public function getAllGenres() {
+        $stmt = $this->db->query("SELECT * FROM genres");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getGenreFromId($genre_id) {
         $stmt = $this->db->prepare("SELECT * FROM genres WHERE id = ?");
         $stmt->execute([$genre_id]);
